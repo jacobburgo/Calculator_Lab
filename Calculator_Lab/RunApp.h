@@ -9,7 +9,7 @@ public:
 	RunApp();
 	~RunApp();
 
-public:
+private:
 	Calculator* calculator = nullptr;
 
 public:
