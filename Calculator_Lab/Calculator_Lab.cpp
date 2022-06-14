@@ -13,16 +13,6 @@ enum buttonIds {
 };
 
 Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPoint(675, 100), wxSize(575, 800)) {
-	// TODO: Loop and create all buttons using index for position & ID
-	// const wxButton* buttonArray [21] = { bin, hex, dec, clear, one, two, three, plus, minus, four, five, six, multiply, divide, seven, eight, nine, numMod, equals, zero, negate };
-	// const char* labelArray[21] = { "bin", "hex", "dec", "C", "1", "2", "3", "+", "-", "4", "5", "6", "*", "/", "7", "8", "9", "%", "=", "0", "+/-" };
-	// int pointX = 10, pointY = 200, sizeX = 100, sizeY = 100;
-
-	//for (int i = 0; i < 22; i++) {
-	//	int buttonId = 100 + i;
-	//	buttonArray[i] = new wxButton(this, buttonId, labelArray[i], wxPoint(pointX, pointY), wxSize(sizeX, sizeY));
-	//}
-
 	bin = new wxButton(this, first_button_id, "bin", wxPoint(10, 200), wxSize(100, 100));
 	hex = new wxButton(this, other_button_ids, "hex", wxPoint(120, 200), wxSize(100, 100));
 	dec = new wxButton(this, other_button_ids, "dec", wxPoint(230, 200), wxSize(100, 100));
