@@ -66,3 +66,14 @@ Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPo
 
 Calculator::~Calculator() {
 }
+
+void Calculator::OnButtonClick(wxCommandEvent& evt) {
+	int id = evt.GetId();
+	wxButton* evtObj = (wxButton*)evt.GetEventObject();
+	wxString buttonLabel = evtObj->GetLabelText();
+	calcOutputWindow->AppendText(buttonLabel);
+	if (id == 104) calcOutputWindow->Clear();
+
+	// TODO: Implement operators
+	// TODO: Implement modifiers
+}
