@@ -35,9 +35,4 @@ private: // wxWidget vars
 	wxButton* hex;
 	wxButton* dec;
 	wxTextCtrl* calcOutputWindow;
-
-public: // Event handling
-	wxDECLARE_EVENT_TABLE();
-
-	void OnButtonClick(wxCommandEvent& evt);
 };
