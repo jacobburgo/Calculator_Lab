@@ -3,11 +3,11 @@
 #include "wx/wx.h"
 
 class Calculator : public wxFrame {
-public:
+public: // Lifecycle Methods
 	Calculator();
 	~Calculator();
 
-private:
+private: // wxWidget vars
 	// Threw error when implementing as wxButton* numOne, numTwo, numThree, numEtc;
 	// Severity	Code	Description	Project	File	Line	Suppression State
 	// Error	C2679	binary '=' : no operator found which takes a right - hand operand of type 'wxButton *' (or there is no acceptable conversion)	Calculator_Lab	C : \Users\Jacob Burgo\Desktop\Programing Classes\SWE\Calculator_Lab\Calculator_Lab\Calculator_Lab.cpp	8
@@ -36,6 +36,8 @@ private:
 	wxButton* decimal;
 	wxTextCtrl* calcOutputWindow;
 
-public:
-	// Function declarations here
+public: // Event handling
+	wxDECLARE_EVENT_TABLE();
+
+	void OnButtonClick(wxCommandEvent& evt);
 };

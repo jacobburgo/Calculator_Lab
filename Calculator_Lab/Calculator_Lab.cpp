@@ -2,8 +2,12 @@
 #include <iostream>
 #include "wx/wx.h"
 
+wxBEGIN_EVENT_TABLE(Calculator, wxFrame)
+
+wxEND_EVENT_TABLE()
+
 Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPoint(675, 100), wxSize(575, 800)) {
-	// Loop and create all buttons using index for position
+	// TODO: Loop and create all buttons using index for position & ID
 	binary = new wxButton(this, 101, "bin", wxPoint(10, 200), wxSize(100, 100));
 	hexadecimal = new wxButton(this, 102, "hex", wxPoint(120, 200), wxSize(100, 100));
 	decimal = new wxButton(this, 103, "dec", wxPoint(230, 200), wxSize(100, 100));
@@ -33,4 +37,7 @@ Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPo
 }
 
 Calculator::~Calculator() {
+}
+
+void Calculator::OnButtonClick(wxCommandEvent& evt) {
 }
