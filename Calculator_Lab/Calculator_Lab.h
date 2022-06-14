@@ -8,8 +8,7 @@ public: // Lifecycle Methods
 	~Calculator();
 
 private: // wxWidget vars
-	// Threw error when implementing as wxButton* numOne, numTwo, numThree, numEtc;
-	// Severity	Code	Description	Project	File	Line	Suppression State
+	// Threw error when implementing as wxButton* one, two, three, etc;
 	// Error	C2679	binary '=' : no operator found which takes a right - hand operand of type 'wxButton *' (or there is no acceptable conversion)	Calculator_Lab	C : \Users\Jacob Burgo\Desktop\Programing Classes\SWE\Calculator_Lab\Calculator_Lab\Calculator_Lab.cpp	8
 
 	// Buttons: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, =, +, -, /, *, %, neg, bin, hex, decimal
