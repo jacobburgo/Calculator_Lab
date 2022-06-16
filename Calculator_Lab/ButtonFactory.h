@@ -3,6 +3,6 @@
 
 class ButtonFactory {
 public:
-	wxButton* CreateButtons(wxWindow* parent);
+	wxButton* CreateButton(wxWindow* parent, int index);
 };
 
