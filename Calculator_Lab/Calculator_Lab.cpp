@@ -10,10 +10,10 @@ wxEND_EVENT_TABLE()
 
 Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPoint(675, 100), wxSize(575, 800)) {
 	ButtonFactory factory;
-	wxButton* factoryButtonArray = factory.CreateButtons(this);
-	wxButton* calButtonArray[21] = { this->bin, this->hex, this->dec, this->clear, this->one, this->two, this->three, this->plus, this->minus, this->four,this->five, this->six, this->divide, this->seven, this->eight, this->nine, this->numMod, this->equals, this->zero, this->negate };
-	for (int i = 0; i < 21; i++) {
-		calButtonArray[i] = &factoryButtonArray[i];
+	wxButton* calButtonArray[21] = { this->bin, this->hex, this->dec, this->clear, this->one, this->two, this->three, this->plus, this->minus, this->four, this->five, this->six, this->multiply, this->divide, this->seven, this->eight, this->nine, this->numMod, this->equals, this->zero, this->negate };
+
+	for (int i = 0; i < 20; i++) {
+		calButtonArray[i] = factory.CreateButton(this, i);
 	}
 
 	calcOutputWindow = new wxTextCtrl(this, 120, "", wxPoint(10, 10), wxSize(540, 170));
