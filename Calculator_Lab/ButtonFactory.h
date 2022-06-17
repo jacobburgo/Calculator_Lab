@@ -1,8 +1,9 @@
 #pragma once
 #include "wx/wx.h"
+#include "Calculator_Lab.h"
 
 class ButtonFactory {
 public:
-	wxButton* CreateButtons(wxWindow* parent);
+	wxButton* CreateButton(wxWindow* parent);
 };
 
