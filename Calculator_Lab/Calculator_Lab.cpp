@@ -26,12 +26,15 @@ Calculator::~Calculator() {}
 
 void Calculator::OnButtonClick(wxCommandEvent& evt) {
 	CalculatorProcessor* processor = CalculatorProcessor::GetInstance();
-	int id = evt.GetId();
+
 	wxButton* evtObj = (wxButton*)evt.GetEventObject();
 	wxString buttonLabel = evtObj->GetLabelText();
-	std::vector<std::string> outputTexts;
+
+	int commandWork = 0;
+
 	wxString value = calcOutputWindow->GetValue();
 	processor->SetBaseNumber(wxAtoi(value));
+
 	if (buttonLabel == "C") {
 		calcOutputWindow->Clear();
 	} else if (buttonLabel == "hex") {
@@ -49,6 +52,11 @@ void Calculator::OnButtonClick(wxCommandEvent& evt) {
 	} else if (buttonLabel != "=") {
 		calcOutputWindow->AppendText(buttonLabel);
 	} else {
+		if (buttonLabel == "+") {
+		} else if (buttonLabel == "-") {
+		} else if (buttonLabel == "*") {
+		} else if (buttonLabel == "/") {
+		}
 	}
 
 	// TODO: Implement operators

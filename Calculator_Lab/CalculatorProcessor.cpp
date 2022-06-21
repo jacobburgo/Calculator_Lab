@@ -42,22 +42,27 @@ std::string CalculatorProcessor::GetHexadecimal() {
 
 	int i = 0;
 	while (n != 0) {
-		int temp = 0;
-		temp = n % 16;
-
+		int temp = n % 16;
 		if (temp < 10) {
-			hexaDeciNum[i] = temp + 48;
-			i++;
-		} else {
-			hexaDeciNum[i] = temp + 55;
-			i++;
+			results = std::to_string(temp) + results;
+		} else if (temp == 10) {
+			results = "A" + results;
+		} else if (temp == 11) {
+			results = "B" + results;
+		} else if (temp == 12) {
+			results = "C" + results;
+		} else if (temp == 13) {
+			results = "D" + results;
+		} else if (temp == 14) {
+			results = "E" + results;
+		} else if (temp == 15) {
+			results = "F" + results;
 		}
 
 		n = n / 16;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
-		results = results + hexaDeciNum[j];
+	results = "0x" + results;
 
 	return results;
 }
