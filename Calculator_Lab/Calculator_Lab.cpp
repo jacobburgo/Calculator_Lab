@@ -3,6 +3,7 @@
 #include <string>
 #include "wx/wx.h"
 #include "ButtonFactory.h"
+#include "CalculatorProcessor.h"
 
 wxBEGIN_EVENT_TABLE(Calculator, wxFrame)
 EVT_BUTTON(wxID_ANY, Calculator::OnButtonClick)
@@ -24,11 +25,31 @@ Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPo
 Calculator::~Calculator() {}
 
 void Calculator::OnButtonClick(wxCommandEvent& evt) {
+	CalculatorProcessor* processor = CalculatorProcessor::GetInstance();
 	int id = evt.GetId();
 	wxButton* evtObj = (wxButton*)evt.GetEventObject();
 	wxString buttonLabel = evtObj->GetLabelText();
-	calcOutputWindow->AppendText(buttonLabel);
-	if (buttonLabel == "C") calcOutputWindow->Clear();
+	std::vector<std::string> outputTexts;
+	wxString value = calcOutputWindow->GetValue();
+	processor->SetBaseNumber(wxAtoi(value));
+	if (buttonLabel == "C") {
+		calcOutputWindow->Clear();
+	} else if (buttonLabel == "hex") {
+		std::string newVal = processor->GetHexadecimal();
+		calcOutputWindow->Clear();
+		calcOutputWindow->AppendText(newVal);
+	} else if (buttonLabel == "dec") {
+		std::string newVal = processor->GetDecimal();
+		calcOutputWindow->Clear();
+		calcOutputWindow->AppendText(newVal);
+	} else if (buttonLabel == "bin") {
+		std::string newVal = processor->GetBinary();
+		calcOutputWindow->Clear();
+		calcOutputWindow->AppendText(newVal);
+	} else if (buttonLabel != "=") {
+		calcOutputWindow->AppendText(buttonLabel);
+	} else {
+	}
 
 	// TODO: Implement operators
 	// TODO: Implement modifiers
