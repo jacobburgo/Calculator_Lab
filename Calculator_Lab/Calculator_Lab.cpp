@@ -12,7 +12,7 @@ wxEND_EVENT_TABLE()
 Calculator::Calculator() : wxFrame(nullptr, wxID_ANY, "Jacob's Calculator", wxPoint(675, 100), wxSize(575, 800)) {
 	ButtonFactory factory;
 
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 21; i++) {
 		mButtons[i] = factory.CreateButton(this, i);
 	}
 
@@ -50,6 +50,8 @@ void Calculator::OnButtonClick(wxCommandEvent& evt) {
 		calcOutputWindow->Clear();
 		calcOutputWindow->AppendText(newVal);
 	} else if (buttonLabel != "=") {
+		calcOutputWindow->AppendText(buttonLabel);
+	} else if (buttonLabel != "+/-") {
 		calcOutputWindow->AppendText(buttonLabel);
 	} else {
 		if (buttonLabel == "+") {
