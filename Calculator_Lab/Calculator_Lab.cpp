@@ -123,7 +123,6 @@ void Calculator::OnButtonClick(wxCommandEvent& evt) {
 			Mod* mod = new Mod(processor, wxAtoi(value));
 			Calculator::commands.push_back(mod);
 			calcOutputWindow->AppendText(buttonLabel);
-			calcOutputWindow->AppendText(buttonLabel);
 		}
 		else {
 			calcOutputWindow->AppendText(buttonLabel);
