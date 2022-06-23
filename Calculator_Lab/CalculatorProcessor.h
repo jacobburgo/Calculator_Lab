@@ -21,5 +21,9 @@ public:
 	std::string GetHexadecimal();
 	std::string GetBinary();
 	std::string Negate();
+	std::string Add();
+	std::string Subtract();
+	std::string Divide();
+	std::string Multiply();
 };
 

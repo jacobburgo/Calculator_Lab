@@ -35,12 +35,6 @@ Calculator::~Calculator() {
 void Calculator::OnButtonClick(wxCommandEvent& evt) {
 	CalculatorProcessor* processor = CalculatorProcessor::GetInstance();
 
-	const char* p = "+";
-	const char* s = "-";
-	const char* m = "*";
-	const char* d = "/";
-	const char* mo = "%";
-
 	wxButton* evtObj = (wxButton*)evt.GetEventObject();
 	wxString buttonLabel = evtObj->GetLabelText();
 
