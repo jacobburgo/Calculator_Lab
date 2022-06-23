@@ -143,12 +143,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Add.h" />
+    <ClInclude Include="ButtonFactory.h" />
+    <ClInclude Include="CalculatorProcessor.h" />
     <ClInclude Include="Calculator_Lab.h" />
+    <ClInclude Include="Divide.h" />
+    <ClInclude Include="IBaseCommand.h" />
+    <ClInclude Include="Minus.h" />
+    <ClInclude Include="Mod.h" />
+    <ClInclude Include="Multiply.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RunApp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Add.cpp" />
+    <ClCompile Include="ButtonFactory.cpp" />
+    <ClCompile Include="CalculatorProcessor.cpp" />
     <ClCompile Include="Calculator_Lab.cpp" />
+    <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="IBaseCommand.cpp" />
+    <ClCompile Include="Minus.cpp" />
+    <ClCompile Include="Mod.cpp" />
+    <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="RunApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Calculator_Lab.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
