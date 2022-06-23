@@ -39,7 +39,7 @@ void Calculator::OnButtonClick(wxCommandEvent& evt) {
 	wxString buttonLabel = evtObj->GetLabelText();
 
 	int commandWork = 0;
-
+	const char* s = "+/-";
 	wxString value = calcOutputWindow->GetValue();
 	processor->SetBaseNumber(wxAtoi(value));
 
