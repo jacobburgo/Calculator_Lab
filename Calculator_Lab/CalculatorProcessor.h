@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include <unordered_map>
+#include <vector>
+#include "IBaseCommand.h"
 
 class CalculatorProcessor {
 private:
@@ -8,6 +9,8 @@ private:
 	int baseNumber;
 	CalculatorProcessor() {}
 public:
+	size_t numSize;
+	std::string answer;
 	static CalculatorProcessor* GetInstance();
 	void SetBaseNumber(int number);
 
@@ -17,6 +20,7 @@ public:
 	std::string GetDecimal();
 	std::string GetHexadecimal();
 	std::string GetBinary();
+	std::string Negate();
 	std::string Add();
 	std::string Subtract();
 	std::string Divide();
