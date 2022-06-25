@@ -96,6 +96,8 @@ public:
 		std::string check3 = "0x270F";
 		Assert::AreEqual(check3, answer3Hex);
 
+		// tested against values determined at https://www.rapidtables.com/convert/number/decimal-to-binary.html
+
 		Minus* sub = new Minus(processor, 5);
 		int answer1 = sub->Execute(5);
 		Multiply* mult = new Multiply(processor, 5);
